@@ -3,4 +3,6 @@ from .models import Profile
 
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'phone', 'address')
+    list_display = ("user", "phone", "address")
+    list_filter = ("user",)
+    search_fields = ("user__username", "phone")
